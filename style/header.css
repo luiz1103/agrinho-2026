@@ -1,0 +1,63 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS DO TEMA AGRO (Se já não tiver no seu arquivo)
+   ========================================================================== */
+:root {
+    --verde-tech: #2E7D32;       /* Verde folha forte */
+    --verde-escuro: #1B5E20;     /* Verde para contrastes */
+    --cinza-tech: #37474F;       /* Grafite para textos modernos */
+    --fundo-cabecalho: #FFFFFF;  /* Fundo limpo para o menu */
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Telas Maiores que 800px)
+   ========================================================================== */
+@media screen and (min-width: 800px) {
+    
+    /* Organiza o cabeçalho em linha (Logo na esquerda, textos e botões na direita) */
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 4%;
+        background-color: var(--fundo-cabecalho);
+        border-bottom: 3px solid var(--verde-tech); /* Linha sutil tecnológica */
+    }
+
+    /* Redimensiona a logo para não quebrar o layout */
+    .cabecalho-imagem {
+        max-height: 60px;
+        width: auto;
+    }
+
+    /* Transforma a lista de textos em um bloco alinhado */
+    .cabecalho ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+    }
+
+    /* Estilização dos textos do cabeçalho */
+    .cabecalho-lista-item:first-child {
+        font-size: 1.6rem; /* Equivalente a um h1 elegante */
+        font-weight: 700;
+        color: var(--verde-tech);
+        margin-bottom: 0.2rem;
+    }
+
+    .cabecalho-lista-item:last-child {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--cinza-tech);
+        font-style: italic;
+    }
+
+    /* Alinhamento do bloco de acessibilidade ao lado do menu em telas grandes */
+    .menu-acessibilidade {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,244 @@
+@import url("style/header.css");
+
+/* ==========================================================================
+   VARIÁVEIS DE COR (Tema AgroTech)
+   ========================================================================== */
+:root {
+    --verde-tech: #2E7D32;       /* Verde principal */
+    --verde-escuro: #1B5E20;     /* Tons de folha e terra */
+    --cinza-fundo: #F4F7F5;      /* Fundo suave para leitura */
+    --cinza-texto: #263238;      /* Texto escuro legível */
+    --branco: #FFFFFF; 
+    --preto: #000000;
+    --laranja-claro: #FF862A;    /* Destaque / Acessibilidade */
+}
+
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não quebre larguras */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cinza-fundo);
+    color: var(--cinza-texto);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+.cabecalho {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.cabecalho-imagem {
+    max-width: 120px;
+    height: auto;
+}
+
+.cabecalho ul {
+    list-style: none;
+}
+
+.cabecalho-lista-item {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.1rem; /* Usando rem para funcionar com o JS */
+    font-weight: 300;
+}
+
+.cabecalho-lista-item:first-child {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* ==========================================================================
+   SEÇÕES AGRO (CONTEÚDO)
+   ========================================================================== */
+.agro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 10%;
+    gap: 40px;
+}
+
+/* Efeito zebrado: altera o fundo de seções alternadas para um visual limpo */
+.agro:nth-of-type(even) {
+    background-color: var(--branco);
+}
+
+.agro-div-conteudo {
+    width: 50%;
+}
+
+.agro-titulo {
+    font-size: 2rem;
+    color: var(--verde-tech);
+    margin-bottom: 20px;
+}
+
+.agro-texto-um {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.agro-texto-dois {
+    font-size: 0.9rem;
+    color: #546E7A;
+    font-style: italic;
+}
+
+.agro-imagem {
+    width: 40%;
+    max-height: 350px;
+    object-fit: cover; /* Recorta a imagem elegantemente sem distorcer */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   ESTUDANTES / DESENVOLVEDORES
+   ========================================================================== */
+.estudante {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: var(--cinza-fundo);
+}
+
+.estudante-titulo {
+    font-size: 2rem;
+    color: var(--verde-escuro);
+    margin-bottom: 40px;
+}
+
+.estudante-todos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.estudante-div {
+    background: var(--branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    width: 220px;
+    text-align: center;
+}
+
+.estudante-imagem {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--verde-tech);
+    margin-bottom: 15px;
+}
+
+.estudante-nome {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.estudante-icone {
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+    transition: transform 0.2s;
+}
+
+.estudante-icone:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.rodape {
+    background-color: var(--preto);
+    text-align: center;
+    padding: 20px;
+}
+
+.rodape-imagem {
+    height: 50px;
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE E BOTÕES
+   ========================================================================== */
+.menu-acessibilidade {
+    position: fixed;
+    bottom: 20px; /* Mudado para o canto inferior para não cobrir o topo */
+    right: 20px;
+    z-index: 1000;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--verde-tech);
+    color: var(--branco);
+}
+
+/* Estado oculto invertido pela lógica do seu JS (.apresenta-lista esconde) */
+.apresenta-lista {
+    display: none !important;
+}
+
+.opcoes-acessibilidade {
+    margin-bottom: 10px; /* Mudado para abrir para cima */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ==========================================================================
+   MODO ALTO CONTRASTE
+   ========================================================================== */
+.alto-contraste {
+    background-color: var(--preto) !important;
+    color: var(--branco) !important;
+}
+
+.alto-contraste .cabecalho,
+.alto-contraste .rodape,
+.alto-contraste .agro,
+.alto-contraste .estudante,
+.alto-contraste .estudante-div {
+    background-color: var(--preto) !important;
+    background-image: none !important;
+    color: var(--branco) !important;
+    border: 1px solid var(--branco);
+}
+
+.alto-contraste .agro-titulo,
+.alto-contraste .estudante-titulo {
+    color: var(--laranja-claro) !important;
+}
+
+.alto-contraste .btn-primary {
+    background-color: var(--laranja-claro) !important;
+    color: var(--preto) !important;
+}
